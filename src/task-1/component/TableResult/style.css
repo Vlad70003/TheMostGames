@@ -1,0 +1,15 @@
+.table {
+    margin: 20px;
+  }
+  .tr {
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .td {
+    flex: 1;
+  }
+  .td:nth-child(1) {
+    flex: 4;
+  }
