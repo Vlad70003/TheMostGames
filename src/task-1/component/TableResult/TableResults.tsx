@@ -3,6 +3,7 @@ import "./style.css";
 
 type propsType = {
   textList: any;
+  errors: string[],
 };
 
 export function TableResults(props: propsType) {
@@ -34,14 +35,21 @@ export function TableResults(props: propsType) {
     return returnTr;
   };
 
+
   return (
     <table className="table">
+      {props.errors.length > 0 && <div className="message">
+      The index is a number from 1 to 20. Error for the index: {props.errors.join()}
+      </div>}
       <tr className="tr">
-        <th className="td">Текст</th>
-        <th className="td">Количество слов</th>
-        <th className="td">Количество гласных</th>
+        <th className="td">Texts</th>
+        <th className="td">Number of words</th>
+        <th className="td">Number of vowels</th>
       </tr>
+      <div className="table__wrapper">
       {createTr(props.textList)}
+      </div>
+  
     </table>
   );
 }
